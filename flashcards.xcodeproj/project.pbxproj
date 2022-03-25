@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0717BD7227ED68130042149F /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0717BD7127ED68130042149F /* CreationViewController.swift */; };
+		077066AD27EDA52E00D24569 /* flashcards in Resources */ = {isa = PBXBuildFile; fileRef = 077066AC27EDA52E00D24569 /* flashcards */; };
 		07C1014B27DACF4D0053BA78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C1014A27DACF4D0053BA78 /* AppDelegate.swift */; };
 		07C1014D27DACF4D0053BA78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C1014C27DACF4D0053BA78 /* SceneDelegate.swift */; };
 		07C1014F27DACF4D0053BA78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C1014E27DACF4D0053BA78 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		0717BD7127ED68130042149F /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
+		077066AC27EDA52E00D24569 /* flashcards */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = flashcards; sourceTree = SOURCE_ROOT; };
 		07C1014727DACF4D0053BA78 /* flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C1014A27DACF4D0053BA78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07C1014C27DACF4D0053BA78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				07C1014A27DACF4D0053BA78 /* AppDelegate.swift */,
+				077066AC27EDA52E00D24569 /* flashcards */,
 				07C1014C27DACF4D0053BA78 /* SceneDelegate.swift */,
 				07C1014E27DACF4D0053BA78 /* ViewController.swift */,
 				07C1015027DACF4D0053BA78 /* Main.storyboard */,
@@ -135,6 +138,7 @@
 				07C1015427DACF4E0053BA78 /* Assets.xcassets in Resources */,
 				07C1015F27DAF7E10053BA78 /* README.md in Resources */,
 				07C1015227DACF4D0053BA78 /* Main.storyboard in Resources */,
+				077066AD27EDA52E00D24569 /* flashcards in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
