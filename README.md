@@ -13,7 +13,7 @@
 
 ### App Walk-though
 
-![](apple.gif)
+![](app.gif)
 
 <img src="YOUR_GIF_URL_HERE" width=200><br>
 
