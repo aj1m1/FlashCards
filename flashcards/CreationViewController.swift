@@ -7,9 +7,11 @@
 
 import UIKit
 
+
+
 class CreationViewController: UIViewController {
     
-    @IBOutlet weak var extraAnswer3: UITextField!
+   
     @IBOutlet weak var extraAnswer2: UITextField!
     @IBOutlet weak var extraAnswer1: UITextField!
     @IBOutlet weak var answerTextField: UITextField!
@@ -20,8 +22,8 @@ class CreationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionTextField.text = initialQuestion
-        answerTextField.text = initialAnswer
+//        questionTextField.text = initialQuestion
+//        answerTextField.text = initialAnswer
 
         // Do any additional setup after loading the view.
     }
@@ -36,7 +38,7 @@ class CreationViewController: UIViewController {
         let answerText = answerTextField.text
         let extraAnswer1 = extraAnswer1.text
         let extraAnswer2 = extraAnswer2.text
-        let extraAnswer3 = extraAnswer3.text
+        
         // show error
         
         if questionText == nil || answerText == nil || questionText!.isEmpty || answerText!.isEmpty
@@ -46,7 +48,7 @@ class CreationViewController: UIViewController {
         
             present(alert, animated: true)} else {
         
-        flashcardsController.updateFlashcard(question: questionText!, answer: answerText!,extraAnswer1:extraAnswer1!, extraAnswer2: extraAnswer2!,extraAnswer3:extraAnswer3!)
+        flashcardsController.updateFlashcard(question: questionText!, answer: answerText!,extraAnswer1:extraAnswer1!, extraAnswer2: extraAnswer2!)
         
        
                 dismiss(animated: true)}
