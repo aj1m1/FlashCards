@@ -31,7 +31,7 @@
 ## Lab 3
 
 ### App Walk-through
-![app2.gif]
+![](app2.gif)
 ## Required
 
 ## Required
