@@ -40,5 +40,5 @@
 - [x] Push code to GitHub
 ## Optional
 - [x] User can delete a flashcard
-- [x] User can edit existing flashcard
+- [ ] User can edit existing flashcard
 - [x] User can store multiple choice questions
