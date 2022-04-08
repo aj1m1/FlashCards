@@ -28,7 +28,16 @@ class ViewController: UIViewController {
     //array to hold our flashcards
     var flashcards = [Flashcard]()
     var currentIndex = 0
-    
+   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        card.alpha = 0.0
+        card.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.card.alpha = 1.0
+            self.card.transform = CGAffineTransform.identity})
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +53,7 @@ class ViewController: UIViewController {
         readSavedFlashcards()
         print(flashcards)
         if flashcards.count == 0 {
-            updateFlashcard(question: "What is the first element in the periodic table", answer: "Hydrogen", extraAnswer1: "Hydrogen", extraAnswer2: "Helium")
+            updateFlashcard(question: "What is the first element in the periodic table", answer: "Hydrogen", extraAnswer1: "Nitrogen", extraAnswer2: "Helium")
         } else { updateLabels()
             updateNextPrevButtons()
         }
@@ -67,6 +76,7 @@ class ViewController: UIViewController {
         updateLabels()
         
         updateNextPrevButtons()
+        animatePrev()
     }
     @IBAction func didTapOnNext(_ sender: Any) {
         currentIndex = currentIndex + 1
@@ -74,12 +84,23 @@ class ViewController: UIViewController {
         updateLabels()
         
         updateNextPrevButtons()
+        animateCardOut()
+       
     }
     @IBAction func didTapOnFlashcard(_ sender: Any) {
+       
 //        frontLabel.isHidden = true;
 //        backLabel.isHidden = false;
-        frontLabel.isHidden.toggle()
-        backLabel.isHidden.toggle()
+//        frontLabel.isHidden.toggle();
+//        backLabel.isHidden.toggle();
+        flipFlashcard()
+    }
+    func flipFlashcard() {
+//                frontLabel.isHidden = true;
+//                backLabel.isHidden = false;
+                frontLabel.isHidden.toggle()
+                backLabel.isHidden.toggle()
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {self.frontLabel.isHidden = true })
     }
     func updateFlashcard(question:String, answer:String, extraAnswer1: String, extraAnswer2: String ) {
         let flashcard = Flashcard(question: [question], answer: [answer, extraAnswer1, extraAnswer2])
@@ -106,6 +127,32 @@ class ViewController: UIViewController {
         
     
     
+    }
+    func animateCardOut() {
+        UIView.animate(withDuration: 0.3, animations: {self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)}, completion: {finished in
+            self.updateLabels()
+            
+            self.animateCardIn()})
+        
+    }
+    func animatePrev() {
+        UIView.animate(withDuration: 0.3, animations: {self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)}, completion: {finished in
+            self.updateLabels()
+            
+            self.animatePrevCard()})
+        
+        
+    }
+    func animatePrevCard() {
+        card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+         UIView.animate(withDuration: 0.3) {self.card.transform = CGAffineTransform.identity
+         }
+    }
+    func animateCardIn(){
+       card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        UIView.animate(withDuration: 0.3) {self.card.transform = CGAffineTransform.identity
+        }
+        
     }
     func showColor(color: UIColor) {
         UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseOut, animations: {
@@ -140,7 +187,7 @@ class ViewController: UIViewController {
     }
     func saveAllFlashcardstoDisk(){
         print("flashcards",flashcards[flashcards.count - 1])
-//        flashcards = []
+     // flashcards = []
         let dictionaryArray = flashcards.map { (card) -> [String: [String]] in return ["question": card.question, "answer": card.answer]
             
         }
@@ -169,8 +216,10 @@ class ViewController: UIViewController {
            creationController.answerTextField.text = backLabel.text
            
        }
+  
 
 }
+   
 }
 
 
